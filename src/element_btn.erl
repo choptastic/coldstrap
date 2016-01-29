@@ -10,7 +10,7 @@
 reflect() -> record_info(fields, btn).
 
 render_element(Btn = #btn{type=Type}) ->
-	Button = copy_fields(Rec, #button{}),
+	Button = wf_utils:copy_fields(Btn, #button{}),
 	BtnTypeClass = coldstrap_util:type_class(btn, Type),
 	CurrClass = Btn#button.class,
 	Button#button{class=[CurrClass,btn,BtnTypeClass]}.

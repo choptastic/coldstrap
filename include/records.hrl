@@ -10,6 +10,6 @@
 	disabled=false          :: boolean(),
 	handle_invalid=false    :: boolean(),
 	on_invalid              :: undefined | actions(),
-	delegate                :: module()
+	delegate                :: module(),
 	type=default			:: default | primary | success | info | warning | danger
 }).
