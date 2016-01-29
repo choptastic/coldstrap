@@ -10,11 +10,11 @@
 reflect() -> record_info(fields, btn).
 
 transform_element(Btn = #btn{glyphicon=Icon, type=Type, size=Size}) ->
-	Button = wf_utils:copy_fields(Btn, #button{}),
 	BtnTypeClass = coldstrap_util:type_class(btn, Type),
 	SizeClass = coldstrap_util:type_class(btn, Size),
-	CurrClass = Btn#button.class,
-	Body = add_glyph_body(Icon, Button#button.body),
+	CurrClass = Btn#btn.class,
+	Body = add_glyph_body(Icon, Btn#btn.body),
+	Button = wf_utils:copy_fields(Btn, #button{}),
 	Button#button{
 	 	body=Body,
 		class=[btn, CurrClass,SizeClass,BtnTypeClass]
