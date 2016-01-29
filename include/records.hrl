@@ -13,3 +13,7 @@
 	delegate                :: module(),
 	type=default			:: default | primary | success | info | warning | danger
 }).
+
+-record(glyphicon, {?ELEMENT_BASE(element_glyphicon),
+	icon=""					:: atom() | text()
+}).
