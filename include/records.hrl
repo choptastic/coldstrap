@@ -1,3 +1,5 @@
+-type bs_size()	:: xs | sm | md | lg.
+
 -record(btn, {?ELEMENT_BASE(element_btn),
 	text=""                 :: text(),
 	body=""                 :: body(),
@@ -11,7 +13,9 @@
 	handle_invalid=false    :: boolean(),
 	on_invalid              :: undefined | actions(),
 	delegate                :: module(),
-	type=default			:: default | primary | success | info | warning | danger
+	type=default			:: default | primary | success | info | warning | danger | link,
+	size=undefined			:: undefined | bs_size(),
+	glyphicon=undefined		:: atom() | text()
 }).
 
 -record(glyphicon, {?ELEMENT_BASE(element_glyphicon),
