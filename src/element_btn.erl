@@ -14,13 +14,16 @@ transform_element(Btn = #btn{glyphicon=Icon, type=Type, size=Size}) ->
 	BtnTypeClass = coldstrap_util:type_class(btn, Type),
 	SizeClass = coldstrap_util:type_class(btn, Size),
 	CurrClass = Btn#button.class,
-	GBody = glyph_body(Icon),
-	Body = [GBody, Button#button.body],
+	Body = add_glyph_body(Icon, Button#button.body),
 	Button#button{
 	 	body=Body,
 		class=[btn, CurrClass,SizeClass,BtnTypeClass]
 	}.
-	
-glyph_body(undefined) -> "";
+
+add_glyph_body(undefined, Body) ->
+	Body;
+add_glyph_body(Icon, Body) -> 
+	[glyph_body(Icon), Body].
+
 glyph_body(Icon) -> #glyphicon{icon=Icon}.
 	
