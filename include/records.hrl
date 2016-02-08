@@ -18,6 +18,23 @@
 	glyphicon=undefined		:: atom() | text()
 }).
 
+-record(txtbx, {?ELEMENT_BASE(element_txtbx),
+    text=""                 :: text(),
+    maxlength=""            :: integer() | string(),
+    size=""                 :: integer() | string(),
+    placeholder=""          :: text(),
+    html_encode=true        :: html_encode(),
+    disabled=false          :: boolean(),
+    readonly=false          :: boolean(),
+    next                    :: id(),
+    postback                :: term(),
+    handle_invalid=false    :: boolean(),
+    on_invalid              :: undefined | actions(),
+    delegate                :: module(),
+    html_name               :: html_name(),
+    type=text               :: string() | atom()
+}).
+
 -record(glyphicon, {?ELEMENT_BASE(element_glyphicon),
 	icon=""					:: atom() | text()
 }).
