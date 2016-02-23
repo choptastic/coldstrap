@@ -11,4 +11,4 @@ reflect() -> record_info(fields, dd).
 
 transform_element(Rec = #dd{}) ->
 	Dropdown = wf_utils:copy_fields(Rec, #dropdown{}),
-    Dropdown#textbox{class=[Rec#dd.class, 'form-control']}.
+    Dropdown#dropdown{class=[Rec#dd.class, 'form-control']}.
