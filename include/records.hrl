@@ -51,3 +51,18 @@
 -record(glyphicon, {?ELEMENT_BASE(element_glyphicon),
 	icon=""					:: atom() | text()
 }).
+
+-record(dd, {?ELEMENT_BASE(element_dd),
+        options=[]              :: undefined | options(),
+        size=auto               :: auto | integer(),
+        html_encode=true        :: html_encode(),
+        postback                :: term(),
+        handle_invalid=false    :: boolean(),
+        on_invalid              :: undefined | actions(),
+        delegate                :: module(),
+        value                   :: text(),
+        next                    :: id(),
+        multiple=false          :: boolean(),
+        disabled=false          :: boolean(),
+        html_name               :: html_name()
+    }).
