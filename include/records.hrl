@@ -35,6 +35,19 @@
     type=text               :: string() | atom()
 }).
 
+-record(txtarea, {?ELEMENT_BASE(element_txtarea),
+    text=""                 :: text(),
+    placeholder=""          :: text(),
+    disabled=false          :: boolean(),
+    readonly=false          :: boolean(),
+    trap_tabs=false         :: boolean(),
+    next                    :: id(),
+    columns                 :: undefined | integer(),
+    rows                    :: undefined | integer(),
+    html_encode=true        :: html_encode(),
+    html_name               :: html_name()
+}).
+
 -record(glyphicon, {?ELEMENT_BASE(element_glyphicon),
 	icon=""					:: atom() | text()
 }).
