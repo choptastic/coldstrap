@@ -1,4 +1,5 @@
 -type bs_size()	:: xs | sm | md | lg.
+-type bs_type() :: default | primary | success | info | warning | danger | link.
 
 -record(btn, {?ELEMENT_BASE(element_btn),
 	text=""                 :: text(),
@@ -13,7 +14,7 @@
 	handle_invalid=false    :: boolean(),
 	on_invalid              :: undefined | actions(),
 	delegate                :: module(),
-	type=default			:: default | primary | success | info | warning | danger | link,
+	type=default			:: bs_type(),
 	size=undefined			:: undefined | bs_size(),
 	glyphicon=undefined		:: atom() | text()
 }).
@@ -65,4 +66,11 @@
         multiple=false          :: boolean(),
         disabled=false          :: boolean(),
         html_name               :: html_name()
+    }).
+
+-record(lbl, {?ELEMENT_BASE(element_lbl),
+        size=auto               :: bs_size(),
+        type=default            :: bs_type(),
+        text=""                 :: text(),
+        body=""                 :: body()
     }).
