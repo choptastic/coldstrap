@@ -15,5 +15,5 @@ transform_element(Rec = #lbl{size=Size, type=Type}) ->
     SizeClass = coldstrap_util:type_class(label, Size),
     CurClass = Span#span.class,
     Span#span{
-        class=[CurClass, TypeClass, SizeClass]
+        class=[label, CurClass, TypeClass, SizeClass]
     }.
