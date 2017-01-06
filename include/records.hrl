@@ -74,3 +74,22 @@
     text=""                 :: text(),
     body=""                 :: body()
     }).
+
+-record(bs_container, {?ELEMENT_BASE(element_bs_container),
+        body=[]                 :: body(),
+        text=""                 :: text(),
+        html_encode=true        :: html_encode()
+    }).
+
+-record(bs_row, {?ELEMENT_BASE(element_bs_row),
+        body=[]                 :: body(),
+        text=""                 :: text(),
+        html_encode=true        :: html_encode()
+    }).
+
+-record(bs_col, {?ELEMENT_BASE(element_bs_col),
+        body=[]                 :: body(),
+        text=""                 :: text(),
+        html_encode=true        :: html_encode(),
+        cols=[]                 :: [atom() | binary() | tuple()]
+    }).
