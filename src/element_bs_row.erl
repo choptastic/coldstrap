@@ -10,5 +10,5 @@
 reflect() -> record_info(fields,bs_row).
 
 transform_element(Rec = #bs_row{}) ->
-	Panel = wf_utils:copy_fields(Rec, #bs_row{}),
+	Panel = wf_utils:copy_fields(Rec, #panel{}),
     Panel#panel{class=[Rec#bs_row.class, 'row']}.

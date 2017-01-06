@@ -10,7 +10,7 @@
 reflect() -> record_info(fields,bs_col).
 
 transform_element(Rec = #bs_col{}) ->
-	Panel = wf_utils:copy_fields(Rec, #bs_col{}),
+	Panel = wf_utils:copy_fields(Rec, #panel{}),
     ColClasses = make_col_classes(Rec#bs_col.cols),
     Panel#panel{class=[
         Rec#bs_col.class,
@@ -26,5 +26,5 @@ make_col_class(ColDef) when is_atom(ColDef); is_binary(ColDef); ?IS_STRING(ColDe
     ColDef;
 make_col_class(ColDef) when is_tuple(ColDef) ->
     List = tuple_to_list(ColDef),
-    wf:to_binary(["col-",wf:join(List,"-")]).
+    wf:to_binary(["col-" | wf:join(List,"-")]).
 
