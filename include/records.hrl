@@ -49,6 +49,22 @@
     html_name               :: html_name()
 }).
 
+-record(pass, {?ELEMENT_BASE(element_pass),
+        text=""                 :: text(),
+        maxlength=""            :: integer() | string(),
+        size=""                 :: integer | string(),
+        placeholder=""          :: text(),
+        html_encode=true        :: html_encode(),
+        disabled=false          :: boolean(),
+        readonly=false          :: boolean(),
+        next                    :: id(),
+        postback                :: term(),
+        handle_invalid=false    :: boolean(),
+        on_invalid              :: undefined | actions(),
+        delegate                :: module(),
+        html_name               :: html_name()
+    }).
+
 -record(glyphicon, {?ELEMENT_BASE(element_glyphicon),
     icon=""                 :: atom() | text()
 }).
