@@ -23,7 +23,7 @@ transform_element(Btn = #btn{glyphicon=Icon, type=Type, size=Size}) ->
 add_glyph_body(undefined, Body) ->
 	Body;
 add_glyph_body(Icon, Body) -> 
-	[glyph_body(Icon), Body].
+	[glyph_body(Icon), " ", Body].
 
 glyph_body(Icon) -> #glyphicon{icon=Icon}.
 	
