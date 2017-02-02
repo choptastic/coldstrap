@@ -9,6 +9,7 @@
 
 reflect() -> record_info(fields,bs_container).
 
-transform_element(Rec = #bs_container{}) ->
+transform_element(Rec = #bs_container{fluid=Fluid}) ->
+    Class = ?WF_IF(Fluid, 'container-fluid', 'container'),
 	Panel = wf_utils:fast_copy_fields(Rec, #panel{}),
-    Panel#panel{class=[Rec#bs_container.class, 'container']}.
+    Panel#panel{class=[Rec#bs_container.class, Class]}.

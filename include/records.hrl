@@ -20,7 +20,10 @@
     {type, default, "bs_type()"}
 ]).
 
-?WF_EXTEND(panel, bs_container, element_bs_container, []).
+?WF_EXTEND(panel, bs_container, element_bs_container, [
+    {fluid, false, "boolean()"}
+]).
+
 ?WF_EXTEND(panel, bs_row, element_bs_row, []).
 ?WF_EXTEND(panel, bs_col, element_bs_col, [
     {cols, []}
