@@ -10,7 +10,7 @@
 reflect() -> record_info(fields,bs_col).
 
 transform_element(Rec = #bs_col{}) ->
-	Panel = wf_utils:copy_fields(Rec, #panel{}),
+	Panel = wf_utils:fast_copy_fields(Rec, #panel{}),
     ColClasses = make_col_classes(Rec#bs_col.cols),
     Panel#panel{class=[
         Rec#bs_col.class,

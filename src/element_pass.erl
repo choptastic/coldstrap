@@ -10,5 +10,5 @@
 reflect() -> record_info(fields, pass).
 
 transform_element(Rec = #pass{}) ->
-	Password = wf_utils:copy_fields(Rec, #password{}),
+	Password = wf_utils:fast_copy_fields(Rec, #password{}),
     Password#password{class=[Rec#pass.class, 'form-control']}.

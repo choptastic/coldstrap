@@ -10,7 +10,7 @@
 reflect() -> record_info(fields, lbl).
 
 transform_element(Rec = #lbl{size=Size, type=Type}) ->
-	Span = wf_utils:copy_fields(Rec, #span{}),
+	Span = wf_utils:fast_copy_fields(Rec, #span{}),
     TypeClass = coldstrap_util:type_class(label, Type),
     SizeClass = coldstrap_util:type_class(label, Size),
     CurClass = Span#span.class,

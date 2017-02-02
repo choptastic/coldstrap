@@ -14,7 +14,7 @@ transform_element(Btn = #btn{glyphicon=Icon, type=Type, size=Size}) ->
 	SizeClass = coldstrap_util:type_class(btn, Size),
 	CurrClass = Btn#btn.class,
 	Body = add_glyph_body(Icon, Btn#btn.body),
-	Button = wf_utils:copy_fields(Btn, #button{}),
+	Button = wf_utils:fast_copy_fields(Btn, #button{}),
 	Button#button{
 	 	body=Body,
 		class=[btn, CurrClass,SizeClass,BtnTypeClass]

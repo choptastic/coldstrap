@@ -10,5 +10,5 @@
 reflect() -> record_info(fields, txtbx).
 
 transform_element(Txt = #txtbx{}) ->
-	Textbox = wf_utils:copy_fields(Txt, #textbox{}),
+	Textbox = wf_utils:fast_copy_fields(Txt, #textbox{}),
     Textbox#textbox{class=[Txt#txtbx.class, 'form-control']}.

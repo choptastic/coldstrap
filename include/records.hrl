@@ -12,38 +12,21 @@
 ]).
 
 ?WF_EXTEND(textarea, txtarea, element_txtarea, []).
-
 ?WF_EXTEND(password, pass, element_pass, []).
-
 ?WF_EXTEND(dropdown, dd, element_dd, []).
+
+?WF_EXTEND(span, lbl, element_lbl, [
+    {size, auto, "bs_size()"},
+    {type, default, "bs_type()"}
+]).
+
+?WF_EXTEND(panel, bs_container, element_bs_container, []).
+?WF_EXTEND(panel, bs_row, element_bs_row, []).
+?WF_EXTEND(panel, bs_col, element_bs_col, [
+    {cols, []}
+]).
+
 
 -record(glyphicon, {?ELEMENT_BASE(element_glyphicon),
     icon=""                 :: atom() | text()
 }).
-
-
--record(lbl, {?ELEMENT_BASE(element_lbl),
-    size=auto               :: bs_size(),
-    type=default            :: bs_type(),
-    text=""                 :: text(),
-    body=""                 :: body()
-    }).
-
--record(bs_container, {?ELEMENT_BASE(element_bs_container),
-        body=[]                 :: body(),
-        text=""                 :: text(),
-        html_encode=true        :: html_encode()
-    }).
-
--record(bs_row, {?ELEMENT_BASE(element_bs_row),
-        body=[]                 :: body(),
-        text=""                 :: text(),
-        html_encode=true        :: html_encode()
-    }).
-
--record(bs_col, {?ELEMENT_BASE(element_bs_col),
-        body=[]                 :: body(),
-        text=""                 :: text(),
-        html_encode=true        :: html_encode(),
-        cols=[]                 :: [atom() | binary() | tuple()]
-    }).

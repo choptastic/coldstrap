@@ -10,5 +10,5 @@
 reflect() -> record_info(fields, txtarea).
 
 transform_element(Txt = #txtarea{}) ->
-	Textarea = wf_utils:copy_fields(Txt, #textarea{}),
+	Textarea = wf_utils:fast_copy_fields(Txt, #textarea{}),
     Textarea#textarea{class=[Txt#txtarea.class, 'form-control']}.
