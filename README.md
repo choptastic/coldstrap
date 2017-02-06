@@ -18,7 +18,7 @@ a version of Erlang older than Erlang 18.0, you'll want to add
 ## Elements
 
 To see the elements, check out
-[`include/records.hrl`](https://github.com/choptastic/coldstrap/blob/master/include/records.hrl)
+[include/records.hrl](https://github.com/choptastic/coldstrap/blob/master/include/records.hrl)
 to see which elements are added, and are extended versions of Nitrogen analogs.
 
 ## Functions
