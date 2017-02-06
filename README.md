@@ -37,7 +37,7 @@ Opens a bootstrap [modal](http://getbootstrap.com/javascript/#modals) window.
 
 ### confirm
 
-A special modal window specifically for submitting things and providing a buttons
+A special modal window specifically for submitting things and providing buttons
 
 **Note:** Below, the `Buttons` argument is expected to be a list of tuples, any
 of the following are acceptable:
@@ -53,6 +53,20 @@ of the following are acceptable:
 * `coldstrap:confirm(Body, CloseText)`
 * `coldstrap:confirm(Body, Buttons, CloseText)`
 * `coldstrap:confirm(Title, Body, Buttons, CloseText)`
+
+#### Example:
+
+```erlang
+User = "Chops",
+Title = "Delete User",
+Body = ["Really delete the user named ",#em{text=User},"?"],
+Buttons = [
+	{"Yes, Delete", {delete, User}},
+	{"No, Don't Delete, but Disable Account", {disable, User}}
+],
+CloseText = "No, Do not Delete",
+coldstrap:confirm(Title, Body, Buttons, CloseText).
+```
 
 ### close_modal
 
