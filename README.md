@@ -9,8 +9,9 @@ Nitrogen analogs with a few additional attributes. I will show which are which.
 
 ## Elements
 
-To see the elements, check out `include/records.hrl` to see which elements are
-added, and are extended versions of Nitrogen analogs.
+To see the elements, check out
+[`include/records.hrl`](https://github.com/choptastic/coldstrap/blob/master/include/records.hrl)
+to see which elements are added, and are extended versions of Nitrogen analogs.
 
 ## Functions
 
