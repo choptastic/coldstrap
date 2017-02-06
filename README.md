@@ -2,10 +2,18 @@
 
 [Bootstrap](http://getbootstrap.com) elements for the [Nitrogen Web Framework](http://nitrogenproject.com)
 
-### Notes
+### Note about elements
 
 The vast majority of the Coldstrap elements are copies of their respective
 Nitrogen analogs with a few additional attributes. I will show which are which.
+
+### Note about compatibility
+
+Coldstrap depends on the [rekt](https://github.com/nitrogen/rekt) parse
+transform and uses the typespecs, which only works with the `merl` library
+(which was added to OTP in Erlang 18).  If you're trying to use Coldstrap with
+a version of Erlang older than Erlang 18.0, you'll want to add
+[merl](http://github.com/richcarl/merl) to your rebar dependencies.
 
 ## Elements
 
