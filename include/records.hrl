@@ -2,13 +2,13 @@
 -type bs_type() :: default | primary | success | info | warning | danger | link.
 
 ?WF_EXTEND(button, btn, element_btn, [
-    {type, default}, %% bs_type()
-    size,           %% undefined | bs_size()
-    glyphicon       %% atom() | text()
+    {type, default, "bs_type()"},
+    {size, undefined, "undefined | bs_size()"},
+    {glyphicon, undefined, "atom() | text()"}
 ]).
 
 ?WF_EXTEND(textbox, txtbx, element_txtbx, [
-    {type, text} %% string() | atom()
+    {type, text, "string() | atom()"}
 ]).
 
 ?WF_EXTEND(textarea, txtarea, element_txtarea, []).
