@@ -43,3 +43,9 @@ of the following are acceptable:
 ### close_modal
 
 * `coldstrap:close_modal()`
+
+## Licence
+
+Copyright 2016-2017 Jesse Gumm
+
+MIT License
