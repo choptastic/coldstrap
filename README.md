@@ -25,6 +25,8 @@ to see which elements are added, and are extended versions of Nitrogen analogs.
 
 ### modal
 
+Opens a bootstrap [modal](http://getbootstrap.com/javascript/#modals) window.
+
 * `coldstrap:modal(Body)`
 * `coldstrap:modal(Title, Body)`
 * `coldstrap:modal(Title, Body, Footer)`
@@ -35,6 +37,8 @@ to see which elements are added, and are extended versions of Nitrogen analogs.
 
 ### confirm
 
+A special modal window specifically for submitting things and providing a buttons
+
 **Note:** Below, the `Buttons` argument is expected to be a list of tuples, any
 of the following are acceptable:
 
@@ -43,6 +47,7 @@ of the following are acceptable:
 3. Any valid Nitrogen element (e.g. `#btn{}`)
 
 #### The confirm functions
+
 
 * `coldstrap:confirm(Body)`
 * `coldstrap:confirm(Body, CloseText)`
