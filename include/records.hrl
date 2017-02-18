@@ -28,6 +28,9 @@
 ?WF_EXTEND(panel, bs_col, element_bs_col, [
     {cols, []}
 ]).
+?WF_EXTEND(table, tbl, element_tbl, [
+    {wrapperid, undefined}
+]).
 
 
 -record(glyphicon, {?ELEMENT_BASE(element_glyphicon),
