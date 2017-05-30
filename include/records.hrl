@@ -32,6 +32,12 @@
     {wrapperid, undefined}
 ]).
 
+-record(input_group, {?ELEMENT_BASE(element_input_group),
+    body=[]                 :: body(),
+    size                    :: undefined | bs_size()
+}).
+
+?WF_EXTEND(span, input_group_addon, element_input_group_addon, []).
 
 -record(glyphicon, {?ELEMENT_BASE(element_glyphicon),
     icon=""                 :: atom() | text()
