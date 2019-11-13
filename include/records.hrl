@@ -1,5 +1,5 @@
 -type bs_size()	:: xs | sm | md | lg.
--type bs_type() :: default | primary | success | info | warning | danger | link.
+-type bs_type() :: default | primary | secondary | success | info | warning | danger | link | dark | light.
 
 ?WF_EXTEND(button, btn, element_btn, [
     {type, default, "bs_type()"},
@@ -16,6 +16,11 @@
 ?WF_EXTEND(dropdown, dd, element_dd, []).
 
 ?WF_EXTEND(span, lbl, element_lbl, [
+    {size, auto, "bs_size()"},
+    {type, default, "bs_type()"}
+]).
+
+?WF_EXTEND(span, badge, element_badge, [
     {size, auto, "bs_size()"},
     {type, default, "bs_type()"}
 ]).
