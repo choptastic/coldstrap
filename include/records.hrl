@@ -14,6 +14,7 @@
 ?WF_EXTEND(textarea, txtarea, element_txtarea, []).
 ?WF_EXTEND(password, pass, element_pass, []).
 ?WF_EXTEND(dropdown, dd, element_dd, []).
+?WF_EXTEND(radio, rdio, element_rdio, []).
 
 ?WF_EXTEND(span, lbl, element_lbl, [
     {size, auto, "bs_size()"},

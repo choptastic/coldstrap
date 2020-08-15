@@ -9,7 +9,7 @@
 
 reflect() -> record_info(fields, badge).
 
-transform_element(Rec = #lbl{size=Size, type=Type}) ->
+transform_element(Rec = #badge{size=Size, type=Type}) ->
 	Span = wf_utils:fast_copy_fields(Rec, #span{}),
     TypeClass = coldstrap_util:type_class(badge, Type),
     SizeClass = coldstrap_util:type_class(badge, Size),
