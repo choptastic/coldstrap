@@ -23,7 +23,7 @@ make_col_classes(Col) ->
     [make_col_class(Col)].
 
 make_col_class(ColDef) when is_integer(ColDef) ->
-    make_col_class({md, ColDef});
+    make_col_class({col, md, ColDef});
 make_col_class(ColDef) when is_atom(ColDef); is_binary(ColDef); ?IS_STRING(ColDef) ->
     ColDef;
 make_col_class(ColDef) when is_tuple(ColDef) ->
