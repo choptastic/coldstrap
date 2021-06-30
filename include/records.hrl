@@ -1,4 +1,4 @@
--type bs_size()	:: xs | sm | md | lg.
+-type bs_size()	:: xs | sm | md | lg | large | small | mini. %% large, small, and mini are for backwards compatibility with bootstrap 2
 -type bs_type() :: default | primary | success | info | warning | danger | link.
 
 ?WF_EXTEND(button, btn, element_btn, [
