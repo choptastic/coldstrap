@@ -22,9 +22,11 @@ make_col_classes(Cols) when is_list(Cols), not(?IS_STRING(Cols)) ->
 make_col_classes(Col) ->
     [make_col_class(Col)].
 
+make_col_class(ColDef) when is_integer(ColDef) ->
+    make_col_class({col, md, ColDef});
 make_col_class(ColDef) when is_atom(ColDef); is_binary(ColDef); ?IS_STRING(ColDef) ->
     ColDef;
 make_col_class(ColDef) when is_tuple(ColDef) ->
-    List = tuple_to_list(ColDef),
-    wf:to_binary(["col-" | wf:join(List,"-")]).
+    List = [wf:to_list(X) || X <- tuple_to_list(ColDef)],
+    wf:to_binary([wf:join(List,"-")]).
 

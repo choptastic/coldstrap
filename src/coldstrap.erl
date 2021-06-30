@@ -11,7 +11,8 @@
     confirm/2,
     confirm/3,
     confirm/4,
-    close_modal/0
+    close_modal/0,
+    format_close_button/1
 ]).
 
 confirm(Body) ->
