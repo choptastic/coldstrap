@@ -8,5 +8,7 @@
                   kernel,
                   stdlib
                  ]},
-  {env, []}
+  {included_application, [rekt]},
+  {env, []},
+  {licenses, ["MIT"]}
  ]}.
