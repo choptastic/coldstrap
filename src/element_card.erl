@@ -10,7 +10,7 @@
 reflect() -> record_info(fields,card).
 
 transform_element(Rec = #card{}) ->
-	Panel = wf_utils:fast_copy_fields(Rec, #panel{}).
+	Panel = wf_utils:fast_copy_fields(Rec, #panel{}),
     %% image
     %% header
     %% title
@@ -30,16 +30,15 @@ transform_element(Rec = #card{}) ->
         body=Body,
         header_text=HeaderText,
         header_body=HeaderBody,
-        header_tag=HeaderTag0,
+        header_tag=HeaderTag,
         links=Links
-    },
-    Class = Panel#card.class,
+    } = Rec,
     Panel#panel{class=[card, Class], body=[
         maybe_image_tag(Image), 
-        maybe_card_tag(HeaderTag, HtmlEncode, HeaderText, HeaderBody),
-        #panel{class='card-body', body=[
+        maybe_card_tag(HeaderTag, 'card-header', HtmlEncode, HeaderText, HeaderBody),
+        #panel{class='card-body', text="", body=[
             maybe_card_tag('h5', 'card-title', HtmlEncode, TitleText, TitleBody),
-            maybe_card_tag('h6', ['card-subtitle' 'mb-2', 'text-muted'], HtmlEncode, SubtitleText, SubtitleBody),
+            maybe_card_tag('h6', ['card-subtitle', 'mb-2', 'text-muted'], HtmlEncode, SubtitleText, SubtitleBody),
             maybe_card_tag(p, ['card-text'], HtmlEncode, Text, Body),
             draw_links(Links)
         ]}
@@ -72,9 +71,9 @@ maybe_card_tag(_, _, _, _, _) ->
 
 maybe_image_tag(Image) when not(?WF_BLANK(Image)) ->
     wf_tags:emit_tag(img, [], [
-        {class, 'card-img-top'}
+        {class, 'card-img-top'},
         {src, Image}
     ]);
-maybe_card_tag(_) ->
+maybe_image_tag(_) ->
     [].
                               
