@@ -34,6 +34,19 @@
 ?WF_EXTEND(panel, bs_col, element_bs_col, [
     {cols, []}
 ]).
+
+?WF_EXTEND(panel, card, element_card, [
+    {image, undefined, "undefined | url()"},
+    {title_text, "", "text()"},
+    {title_body, "", "undefined | body()"},
+    {subtitle_body, "", "body()"},
+    {subtitle_text, "", "text()"},
+    {header_body, "", "body()"},
+    {header_text, "", "text()"},
+    {header_tag, 'div', "atom()"},
+    {links, [], "[#link{}] | body()"}
+]).
+
 ?WF_EXTEND(table, tbl, element_tbl, [
     {wrapperid, undefined}
 ]).
