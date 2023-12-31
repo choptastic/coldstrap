@@ -33,10 +33,10 @@ transform_element(Rec = #card{}) ->
         header_tag=HeaderTag,
         links=Links
     } = Rec,
-    Panel#panel{class=[card, Class], body=[
+    Panel#panel{class=[card, Class], text="", body=[
         maybe_image_tag(Image), 
         maybe_card_tag(HeaderTag, 'card-header', HtmlEncode, HeaderText, HeaderBody),
-        #panel{class='card-body', text="", body=[
+        #panel{class='card-body', body=[
             maybe_card_tag('h5', 'card-title', HtmlEncode, TitleText, TitleBody),
             maybe_card_tag('h6', ['card-subtitle', 'mb-2', 'text-muted'], HtmlEncode, SubtitleText, SubtitleBody),
             maybe_card_tag(p, ['card-text'], HtmlEncode, Text, Body),

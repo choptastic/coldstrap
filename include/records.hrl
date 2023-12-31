@@ -32,7 +32,8 @@
 
 ?WF_EXTEND(panel, bs_row, element_bs_row, []).
 ?WF_EXTEND(panel, bs_col, element_bs_col, [
-    {cols, []}
+    {cols, []},
+    {offset, []}
 ]).
 
 ?WF_EXTEND(panel, card, element_card, [
